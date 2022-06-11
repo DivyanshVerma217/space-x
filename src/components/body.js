@@ -1,4 +1,4 @@
-import React, { useEffect, useState, version } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Body() {
@@ -18,27 +18,25 @@ function Body() {
   }, []);
 
   return (
-    <div className=" px-6  bg-hero-lg bg-contain">
+    <div className="p-4 bg-hero-lg bg-contain">
       <h1 className="text-3xl text-white font-bold p-8 text-center">
         🚀--Launcpads--🚀
       </h1>
-
-      <div className="flex  max-w-3xl m-auto   flex-grow items-center pl-2 py-2 bg-gray-100  rounded-lg focus-within:text-gray-600 focus-within:shadow-md">
+      <div className="flex max-w-3xl m-auto rounded-lg ">
         <input
-         className=" flex-grow text-base bg-transparent outline-none"
+          className=" flex flex-grow outline-none rounded-lg p-4 text-black placeholder-black  mb-6"
           type="text"
-          placeholder="Search Launchpads "
+          placeholder="Search Launchpads.. "
           onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <button className = " text-3xl">🔍</button>
+        ></input>
       </div>
-
-      <p className=" text-white text-3xl text-center flex flex-col justify-center max-w-3xl m-auto p-8 border-4 cursor-pointer mt-10 rounded-xl mb-10">TOTAL COUNT : {launchpad.length}</p>
-
-      <div>
+      <div className="text-white max-w-3xl m-auto border-2 border-white rounded-lg p-4 text-3xl font-bold">
+        <h1>Total Count = {launchpad.length}</h1>
+      </div>
+      <div className="p-6">
         {launchpad
           .filter((item) => {
-            if (searchTerm === "") {
+            if (searchTerm == "") {
               return item;
             } else if (
               item.name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -48,7 +46,7 @@ function Body() {
           })
           .map((items) => {
             return (
-              <div className="px-4">
+              <>
                 <div className=" shadow-white shadow-lg flex flex-col justify-center max-w-3xl m-auto p-8 border-4 cursor-pointer mt-10 rounded-xl mb-10 bg-white bg-transparent text-white  ">
                   <div>
                     <img src={items.images.large} alt="" />
@@ -68,7 +66,7 @@ function Body() {
                     </Link>
                   </div>
                 </div>
-              </div>
+              </>
             );
           })}
       </div>
@@ -77,9 +75,3 @@ function Body() {
 }
 
 export default Body;
-
-
-
-
-
-

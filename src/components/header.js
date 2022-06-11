@@ -4,13 +4,7 @@ function Header() {
   return (
     <div className="flex justify-center bg-black z-50 ">
       <div>
-        <img
-          className="h-24 w-28 bg-black"
-          alt="SPACEX"
-          src={
-            "https://assets.flagfamily.com/web/images/articles/share-1633090283.jpg?3lSZHgDrLAWOmjl82xpVS_f7onDPI8am"
-          }
-        />
+       <h1 className="text-white text-4xl m-6 font-bold"> SPACE-X </h1>
       </div>
       <div>
       </div>
